@@ -2,11 +2,11 @@ import os
 from rembg import remove
 from PIL import Image
 
-# Extensions d'images supportées
-image_extensions = ['.jpg', '.jpeg', '.png', 'jfif', '.bmp', '.tiff', '.webp']
+# Supported image extensions
+image_extensions = ['.jpg', '.jpeg', '.png', '.jfif', '.bmp', '.tiff', '.webp']
 images = [f for f in os.listdir('.') if os.path.isfile(f) and any(f.lower().endswith(ext) for ext in image_extensions)]
 
-print(f"🔍 {len(images)} image(s) trouvée(s)")
+print(f"🔍 {len(images)} image(s) found")
 
 for image in images:
     try:
@@ -20,6 +20,6 @@ for image in images:
         print(f"✅ {image} → {output_path}")
         
     except Exception as e:
-        print(f"❌ Erreur avec {image}: {e}")
+        print(f"❌ Error with {image}: {e}")
 
-print("🎉 Traitement terminé !")
+print("🎉 Processing completed!")
